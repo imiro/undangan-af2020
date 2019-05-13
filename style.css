@@ -3,8 +3,8 @@
 } */
 
 @font-face {
-  font-family: RogueScript;
-  src: url("assets/fonts/roguescript-nama.ttf") format("truetype");
+  font-family: RougeScript;
+  src: local("Rouge Script"), url("assets/fonts/rougescript-nama.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,6 +15,10 @@
 
 body {
   font-family: "Unicode Optima", Georgia, sans-serif;
+  color: #3f704d;
+  /* background: url("assets/glitty.gif") no-repeat;
+  background-size: 90%;
+  background-position: 0 0; */
 }
 
 #bg-placeholder {
@@ -36,7 +40,7 @@ body {
 
 .bg-one {
   background: url("assets/bg-bottomleft.png") no-repeat bottom left, url("assets/bg-topright.png") no-repeat top right;
-  background-size: 270px, 270px;
+  background-size: 200px, 200px;
   left: 0;
   right: 0;
   height: 100vh;
@@ -49,9 +53,9 @@ body {
 }
 
 .bg2-one {
-  background: url('assets/background-1.png') no-repeat;
-  background-position: 0 -400px;
-  background-size: 100%;
+  background: url('assets/background-1.png') repeat-x;
+  background-position: 0 -800px;
+  background-size: 60%;
   left: 0;
   right: 0;
 }
@@ -103,6 +107,35 @@ body {
   left: 50px;
 }
 
+.nama {
+  font-family: RougeScript, cursive;
+  font-weight: normal;
+  font-size: 68px;
+  color: #d4af37;
+}
+
+.cover {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: inherit;
+  z-index: 3;
+  border: 0.5px dashed;
+  transition: all 1s;
+  background: gold;
+}
+
+.cover-left:hover {
+  transform: translateX(-700px);
+}
+
+.cover-right:hover {
+  transform: translateX(700px);
+}
+
 /* @media(max-width: 769px) {
   #img-za {
     position: absolute;
@@ -121,3 +154,45 @@ body {
   overflow-x: hidden;
   /* text-align: center;
 } */
+
+
+.form-check {
+  position: relative;
+  display: block;
+  padding-left: 1.25rem;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+}
+
+.form-check-input:disabled ~ .form-check-label {
+  color: #6c757d;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+}
+
+.form-check-inline {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  margin-right: 0.75rem;
+}
+
+.form-check-inline .form-check-input {
+  position: static;
+  margin-top: 0;
+  margin-right: 0.3125rem;
+  margin-left: 0;
+}
+
+.col-form-label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
