@@ -30,7 +30,6 @@ body {
 }
 
 #bg-placeholder2 {
-  transition-delay: 1.5s;
   position: absolute;
   z-index: -2;
   transition: all 1s;
@@ -40,7 +39,7 @@ body {
 
 .bg-one {
   background: url("assets/bg-bottomleft.png") no-repeat bottom left, url("assets/bg-topright.png") no-repeat top right;
-  background-size: 200px, 200px;
+  background-size: 80px, 80px;
   left: 0;
   right: 0;
   height: 100vh;
@@ -48,8 +47,7 @@ body {
 
 .bg-two {
   background-position: -50% bottom, 150% top;
-  /* background: url("assets/background-1.png") no-repeat top;
-  bakcground-size: auto; */
+  transition-delay: 1.5s;
 }
 
 .bg2-one {
@@ -58,10 +56,12 @@ body {
   background-size: 60%;
   left: 0;
   right: 0;
+  transition-delay: 1.5s;
 }
 
 .bg2-two {
   background-position: 0 0;
+  transition-delay: 0;
 }
 
 .column {
@@ -82,12 +82,36 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 85vw;
 }
 
-@media(min-width: 750x) {
+@media(min-width: 768px) {
     #img-za {
       width: 650px;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
+
+    .bg-one {
+      background-size: 150px, 150px;
+    }
+
+    .nama {
+      font-size: 68px;
+    }
+}
+
+@media(min-width: 980px) {
+  .bg-one {
+    background-size: 200px, 200px;
+  }
+}
+
+.container {
+  padding-top: 20px;
 }
 
 #btn1 {
@@ -101,17 +125,19 @@ body {
   padding: 5px;
 }
 
-#menu {
-  position: absolute;
-  top: 40%;
-  left: 50px;
-}
-
 .nama {
   font-family: RougeScript, cursive;
   font-weight: normal;
-  font-size: 68px;
+  font-size: 48px;
   color: #d4af37;
+}
+
+[data-anchor=undangan] {
+  font-size: 0.8em;
+}
+
+[data-anchor=undangan] p.small {
+  margin-top: -5px;
 }
 
 .cover {
@@ -136,63 +162,8 @@ body {
   transform: translateX(700px);
 }
 
-/* @media(max-width: 769px) {
-  #img-za {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+@media (max-width: 580px) {
+  #dUndangan {
+    /* font-size: 24px; */
   }
-} */
-
-/* #section1 {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: url("assets/bg-topright.png") no-repeat top right, url("assets/bg-bottomleft.png") no-repeat bottom left;
-  display: grid;
-  overflow-x: hidden;
-  /* text-align: center;
-} */
-
-
-.form-check {
-  position: relative;
-  display: block;
-  padding-left: 1.25rem;
-}
-
-.form-check-input {
-  position: absolute;
-  margin-top: 0.3rem;
-  margin-left: -1.25rem;
-}
-
-.form-check-input:disabled ~ .form-check-label {
-  color: #6c757d;
-}
-
-.form-check-label {
-  margin-bottom: 0;
-}
-
-.form-check-inline {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-left: 0;
-  margin-right: 0.75rem;
-}
-
-.form-check-inline .form-check-input {
-  position: static;
-  margin-top: 0;
-  margin-right: 0.3125rem;
-  margin-left: 0;
-}
-
-.col-form-label {
-  font-size: 1.2em;
-  font-weight: bold;
 }

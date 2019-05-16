@@ -2,12 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.min.css"> -->
     <link rel="stylesheet" href="scripts/fullpage.min.css">
     <link rel="stylesheet" href="scripts/bootstrap4/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="scripts/leaves.css">
 
+    <script src="scripts/scrolloverflow.min.js" charset="utf-8"></script>
     <script src="scripts/fullpage.js" charset="utf-8"></script>
     <!-- <script src="scripts/boostrap/js/bootstrap.min.js" charset="utf-8"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.min.js" charset="utf-8"></script> -->
@@ -38,12 +40,12 @@
 
       <div class='section' >
         <img id='img-za' src='assets/z-a.png'>
-        <button id='btn1' class='btn btn-default'>Scroll down </button>
+        <!-- <button id='btn1' class='btn btn-default'>Scroll down </button> -->
       </div>
 
       <div class="section"  >
-        <div class="container" style="display: table; height: 100%;">
-          <blockquote style="display: table-cell; vertical-align: middle; width: 800px; text-align: center; font-size: 24px; border: 0;">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.” <br/> <br/> Q.S. Ar-Rum: 21</blockquote>
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 5px;">
+          <blockquote style="margin: 0; text-align: center; border: 0; font-size: 20px;">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.” <br/> <br/> Q.S. Ar-Rum: 21</blockquote>
         </div>
       </div>
 
@@ -87,27 +89,27 @@
       </div>
 
       <div class="section" >
-        <div class="container">
+        <div class="container" >
           <p>Bismillahirrahmanirrahim <br/>
           Assalamu'alaikum warahmatullahi wabarokatuh</p>
           <p>Dengan memohon rahmat serta ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami</p>
           <h1 class='nama'>Fathia Azzahra</h1>
-          <p>Putri dari dr. Zainal Adhim, SpTHT-KL(K), PhD dan dr. Yusra, SpPK, PhD</p>
+          <p class='small'>Putri dari dr. Zainal Adhim, SpTHT-KL(K), PhD dan dr. Yusra, SpPK, PhD</p>
           <h1 class='nama'>&</h1>
           <h1 class='nama'>Muhammad Aji Muharrom</h1>
-          <p>Putra dari dr. Haryudi Aji Cahyono, SpA(K) dan dr. Nurul Fauzi, SpKK</p>
-          <p>Kehadiran dan do'a restu Bapak/Ibu/Saudara/i merupakan kehormatan dan kebahagiaan bagi kami.</p>
-          <p>Wassalamu'alaikum warahmatullahi wabarokatuh</p>
+          <p class='small'>Putra dari dr. Haryudi Aji Cahyono, SpA(K) dan dr. Nurul Fauzi, SpKK</p>
+          <p>Kehadiran dan do'a restu Bapak/Ibu/Saudara/i merupakan kehormatan dan kebahagiaan bagi kami.<br/>
+          Wassalamu'alaikum warahmatullahi wabarokatuh</p>
         </div>
       </div>
 
       <div class="section" >
         <div class="container">
 
-            <h1 style='font-weight: bolder;'>WALIMATUL 'URSY</h1>
+            <h2 style='font-weight: bolder;'>WALIMATUL 'URSY</h2>
 
             <p class='lead'>Minggu, 23 Juni 2019 <br/> 11.00 - 13.00 WIB</p>
-            <p class='lead'>BALLROOM GKM TOWER LANTAI 21<br/>Jl. TB Simatupang Kavling 89 G, Jakarta Selatan</p>
+            <p >BALLROOM GKM TOWER LANTAI 21<br/>Jl. TB Simatupang Kavling 89 G, Jakarta Selatan</p>
 
             <div class="row">
               <iframe  style='margin: 0 auto; display: block;' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7074612113083!2d106.83419211416098!3d-6.302115563430564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed0edb8bcb25%3A0x2b1d68124408c089!2sBRP+GKM+Tower+Menara+Perdana!5e0!3m2!1sen!2sid!4v1557643701356!5m2!1sen!2sid" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -115,7 +117,7 @@
         </div>
       </div>
 
-      <div class="section" >
+      <div class="section" id="dUndangan" >
         <div class="container" >
           <div class="row" style="display: block;">
             <h1 class='nama'>RSVP</h1>
@@ -159,6 +161,10 @@
               <legend class='col-form-label'>Please put your wishes, comments, or anything for us here !</legend>
               <textarea name="entry.2606285" rows="4" cols="80" class='form-control'></textarea>
             </div>
+
+            <div class="form-group">
+              <input type="submit" name="button" class="btn btn-primary" value="Send forth my RSVP"</input>
+            </div>
           </form>
         </div>
       </div>
@@ -173,6 +179,8 @@
       	autoScrolling: true,
         onLeave: handleOnLeave,
         anchors: anchors,
+
+        scrollOverflow: true,
 
         // menu: '#menu',
         navigation: true,
