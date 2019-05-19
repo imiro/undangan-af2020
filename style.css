@@ -13,13 +13,46 @@
         url("assets/fonts/unicode-optima-konten.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: Digital7;
+  src: local("Digital-7 Monospace"),
+       url("assets/fonts/digital-7-mono.ttf");
+}
+
+@font-face {
+  font-family: Artilla;
+  src: local("Artilla"), url("assets/fonts/artilla.ttf");
+}
+/*
+@font-face {
+  font-family: Adlery;
+  src: local("Adlery"), url("assets/fonts/adlery.ttf");
+} */
+
+@-ms-viewport {
+  width: device-width;
+}
+
 body {
   font-family: "Unicode Optima", Georgia, sans-serif;
   color: #3f704d;
-  /* background: url("assets/glitty.gif") no-repeat;
-  background-size: 90%;
-  background-position: 0 0; */
 }
+
+.section {
+  text-align: center;
+}
+
+.container {
+  padding: 10% 25px 0 25px;
+}
+
+.fp-tooltip {
+  background: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  padding: 5px;
+}
+
+/* Background Animations */
 
 #bg-placeholder {
   position: absolute;
@@ -64,17 +97,12 @@ body {
   transition-delay: 0;
 }
 
-.column {
-  margin-top: 200px;
-  padding: 2px;
-  /* border: 0.5px solid black; */
-  /* background: rgba(255, 255, 0, 0.5); */
-  height: 100%;
+.bg2-three {
+  background-position: 0 -800px;
+  transition-delay: 0;
 }
 
-.section {
-  text-align: center;
-}
+/* end of Background Animations */
 
 #img-za {
   margin: 0 auto;
@@ -82,7 +110,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85vw;
+  width: 87vw;
+  transition: opacity 2s;
+  opacity: 0;
+}
+
+#img-za.img-seen {
+  opacity: 1;
 }
 
 @media(min-width: 768px) {
@@ -102,28 +136,21 @@ body {
     .nama {
       font-size: 68px;
     }
+
+    #arrum {
+      font-size: 20px;
+    }
 }
 
 @media(min-width: 980px) {
+
   .bg-one {
     background-size: 200px, 200px;
   }
+
 }
 
-.container {
-  padding-top: 20px;
-}
-
-#btn1 {
-  position: absolute;
-  bottom: 30px;
-}
-
-.fp-tooltip {
-  background: rgba(0,0,0,0.5);
-  border-radius: 3px;
-  padding: 5px;
-}
+/* ===================== */
 
 .nama {
   font-family: RougeScript, cursive;
@@ -132,15 +159,94 @@ body {
   color: #d4af37;
 }
 
-[data-anchor=undangan] {
-  font-size: 0.8em;
+[data-anchor='undangan'] {
+  font-size: 1em;
 }
 
-[data-anchor=undangan] p.small {
+[data-anchor="undangan"] p.small {
   margin-top: -5px;
 }
 
-.cover {
+/* Section: Info */
+
+iframe {
+  border: 0;
+  margin: 0 auto;
+  width: 95%;
+  height: 350px;
+}
+
+[data-anchor="info"] .col-lg-6 {
+  padding-top: 10px;
+}
+
+/* Section: Countdown & RSVP */
+
+.savedate {
+    font-family: Artilla;
+    font-weight: bold;
+}
+
+#timer {
+  text-align: center;
+  margin: 10px auto 15px auto;
+  color: white;
+  font-family: Digital7, monospace;
+  /* background: url("assets/wooden.jpg") no-repeat; */
+  padding: 5px 20px;
+}
+
+#timer .col-timer {
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#timer .col-timer span.timer-val {
+  font-size: 3em;
+  display: block;
+  margin-bottom: -15px;
+}
+
+[data-anchor="rsvp"] .container {
+  padding: 10px;
+}
+
+[data-anchor="rsvp"] .fp-tableCell {
+  vertical-align: top; /* overwrite fp's default setting */
+}
+
+[data-anchor="rsvp"] .fp-tableCell .fp-scroller {
+  background: url("assets/wood-005.png") repeat-x top left;
+  background-size: auto 50vh;
+}
+
+[data-anchor="rsvp"] .fp-tableCell .col-12 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+}
+
+@media (min-width: 980px) {
+    #timer .col-timer span.timer-val {
+      font-size: 5em;
+      line-height: 1;
+    }
+
+    #timer .col-timer {
+      font-size: 1.5em;
+      padding: 10px;
+    }
+}
+
+@media (max-width: 580px) {
+  #dUndangan {
+    /* font-size: 24px; */
+  }
+}
+
+/* .cover {
   display: none;
   position: absolute;
   top: 0;
@@ -160,10 +266,4 @@ body {
 
 .cover-right:hover {
   transform: translateX(700px);
-}
-
-@media (max-width: 580px) {
-  #dUndangan {
-    /* font-size: 24px; */
-  }
-}
+} */

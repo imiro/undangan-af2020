@@ -1,0 +1,15 @@
+#arrum {
+  opacity: 0;
+}
+
+#arrum.animated {
+  opacity: 1;
+}
+
+[data-anchor="undangan"] p {
+  opacity: 0;
+}
+
+[data-anchor="undangan"] p.animated {
+  opacity: 1;
+}
