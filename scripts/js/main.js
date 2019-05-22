@@ -96,6 +96,7 @@ function animateCSSon(node, animationName, callback) {
     animationRegister.register(node, animationName)
 }
 
+// countdown section
 const weddingTime = 1561251600;
 let now = (new Date()).getTime()
 
@@ -118,23 +119,7 @@ let timerId = countdown(function (ts) {
 
 }, weddingTime*1000, countdown.WEEKS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
 
-document.getElementById('forlife').addEventListener('mouseover', function (e) {
-  var imgAddr = 'assets/images/ring-512.jpg'
-  if(e.target.src)
-    e.target.src = imgAddr
-  else
-    e.target.querySelector('img').src = imgAddr
-})
-
-document.getElementById('forlife').addEventListener('mouseout', function (e) {
-  var imgAddr = 'assets/images/pld-512.jpg'
-  if(e.target.src)
-    e.target.src = imgAddr
-  else
-    e.target.querySelector('img').src = imgAddr
-})
-
-// Listener of change
+// Listener for form radio change
 function handleAttendanceChange(e) {
     var list = document.querySelectorAll('.will-attend input')
     if(document.getElementById('rsvp-radio1-i1').checked) {

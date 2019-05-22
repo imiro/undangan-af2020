@@ -176,6 +176,18 @@ body {
   font-size: 2em;
 }
 
+#forlife > .hover {
+  display: none;
+}
+
+#forlife:hover .initial, #forlife:active .initial, #forlife:focus .initial  {
+  display: none;
+}
+
+#forlife:hover .hover, #forlife:active .hover {
+  display: block;
+}
+
 /* Section: Info */
 
 iframe {
