@@ -1,4 +1,8 @@
-ul.polaroids li { display: inline; }
+/* From: https://zurb.com/playground/css3-polaroids */
+/* Credits to ZURB */
+
+ul.polaroids { text-align: center; }
+ul.polaroids li { display: inline; text-align: center; }
 ul.polaroids a {
   background: #fff;
   display: inline;
@@ -26,8 +30,13 @@ ul.polaroids a {
       margin-left: 0;
     }
   }
-  
+
   ul.polaroids img { display: block; width: 190px; margin-bottom: 12px; }
+  ul.polaroids p.small { width: 175px; font-weight: 350; }
+  @media (min-width: 980px) {
+    ul.polaroids p.small { font-size: 70% }
+  }
+
   ul.polaroids a:after { content: attr(title); }
 
   ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); }
@@ -43,3 +52,16 @@ ul.polaroids a {
   }
 
   ul.polaroids li a:hover { -webkit-transform: scale(1.25); -moz-transform: scale(1.25); -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); position: relative; z-index: 5; }
+
+  /* Add drop shadows and smooth out the transition (Safari only) */
+ul.polaroids a {
+  -webkit-transition: -webkit-transform .15s linear;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+}
+
+/* On hover, darken the shadows a bit */
+ul.polaroids a {
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}

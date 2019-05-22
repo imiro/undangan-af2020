@@ -50,15 +50,6 @@ function handleOnLeave(origin, destination, direction)
 
   // --- section 0 (home) ---
 
-  if(destination.index == 0) {
-    let img = document.getElementById('img-za')
-    if( img.classList.contains('img-seen') )
-      img.classList.remove('img-seen')
-
-    setTimeout(() => img.classList.add('img-seen'), 1000)
-    // img.classList.add('img-seen');
-  }
-
   if(origin.index == 0) {
     let img = document.getElementById('img-za')
     if( img.classList.contains('img-seen') )
@@ -72,6 +63,13 @@ function handleOnLeave(origin, destination, direction)
 
 function handleAfterLoad(origin, destination, direction)
 {
+
+  if(destination.index == 0) {
+    let img = document.getElementById('img-za')
+    img.classList.add('img-seen')
+    // img.classList.add('img-seen');
+  }
+
   if(destination.anchor == 'hikmah1') {
     animateCSS('#arrum', 'zoomIn')
   }
@@ -120,8 +118,45 @@ let timerId = countdown(function (ts) {
 
 }, weddingTime*1000, countdown.WEEKS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
 
+document.getElementById('forlife').addEventListener('mouseover', function (e) {
+  var imgAddr = 'assets/images/ring-512.jpg'
+  if(e.target.src)
+    e.target.src = imgAddr
+  else
+    e.target.querySelector('img').src = imgAddr
+})
+
+document.getElementById('forlife').addEventListener('mouseout', function (e) {
+  var imgAddr = 'assets/images/pld-512.jpg'
+  if(e.target.src)
+    e.target.src = imgAddr
+  else
+    e.target.querySelector('img').src = imgAddr
+})
+
+// Listener of change
+function handleAttendanceChange(e) {
+    var list = document.querySelectorAll('.will-attend input')
+    if(document.getElementById('rsvp-radio1-i1').checked) {
+      for(var i = 0, el = list[i]; i < list.length ;++i, el=list[i])
+      {
+        if(el.hasAttribute('disabled'))
+          el.removeAttribute('disabled')
+      }
+    } else {
+      for(var i = 0, el = list[i]; i < list.length ;++i, el=list[i])
+      {
+        el.setAttribute('disabled', '')
+      }
+    }
+}
+
+document.getElementById('rsvp-radio1-i1').addEventListener('change', handleAttendanceChange)
+document.getElementById('rsvp-radio1-i2').addEventListener('change', handleAttendanceChange)
+
+// document.forms[0].elements
 // document.getElementById('img-za').classList.add('img-seen');
-setTimeout(() => {document.getElementById('img-za').classList.add('img-seen');}, 1000)
+// setTimeout(() => {document.getElementById('img-za').classList.add('img-seen');}, 1000)
 
 // fetch("http://worldtimeapi.org/api/ip", {mode: 'no-cors'}).then(resp => resp.json())
 //   .then(obj => obj.unixtime)
