@@ -234,25 +234,27 @@ iframe {
   margin-bottom: -15px;
 }
 
-[data-anchor="rsvp"] .container {
+[data-anchor="rsvp"] .container-fluid {
   padding: 10px;
+  background: url("assets/wood-005.png") repeat-x top left;
+  background-size: auto 50vh;
 }
 
 [data-anchor="rsvp"] .fp-tableCell {
   vertical-align: top; /* overwrite fp's default setting */
 }
 
-[data-anchor="rsvp"] .fp-tableCell .fp-scroller {
-  background: url("assets/wood-005.png") repeat-x top left;
-  background-size: auto 50vh;
-}
-
-[data-anchor="rsvp"] .fp-tableCell .col-12 {
+/* [data-anchor="rsvp"] .fp-tableCell .col-12 {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   margin: auto;
-}
+} */
+/*
+[data-anchor="rsvp"] .fp-tableCell .fp-scroller {
+background: url("assets/wood-005.png") repeat-x top left;
+background-size: auto 50vh;
+} */
 
 @media (min-width: 980px) {
     #timer .col-timer span.timer-val {

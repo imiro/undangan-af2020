@@ -8,7 +8,8 @@
     <link rel="shortcut icon" size="114x114,144x144" type="image/png" href="favicon144.png">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.min.css"> -->
     <link rel="stylesheet" href="scripts/fp/fullpage.min.css">
-    <link rel="stylesheet" href="scripts/bootstrap4/css/bootstrap.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-animation.css">
     <link rel="stylesheet" href="scripts/css/leaves.css">
@@ -288,7 +289,7 @@
       </div>
 
       <div class="section" id="dUndangan" >
-        <div class="container" >
+        <div class="container-fluid" >
           <div class="row" style='height: 50vh;display: table;width: 100%; margin: auto;'>
             <div class='col-12' id="timer">
                 <h1 class='savedate'>Save the date!</h1>
@@ -308,70 +309,99 @@
           <div class="row" style="display: block;" >
             Please confirm your attendance by filling out the following form
           </div>
-          <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/viewform" class='btn btn-primary d-lg-none'>Open RSVP Form</a> -->
-          <form class='form row' style='text-align: left;margin-top: 5px;width: auto;margin-left: auto; margin-right: auto;' action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/formResponse" method="POST">
-            <div class="form-group col-sm-12">
-              <legend for="rsvp-nama" class='col-form-label'>What's your name? <span class='required'>*</span></legend>
-              <input class="form-control" type="text" id="rsvp-nama" name="entry.1498135098" value="" required>
-            </div>
-            <div class="col-sm-12">
-              <legend class='col-form-label'>Are you able to attend? <span class='required'>*</span></legend>
-              <div class="form-check">
 
-                <label class='form-check-label' for="rsvp-radio1-i1"><input type="radio" class='form-check-input' name="entry.877086558" value="Yes,  I'll be there" id="rsvp-radio1-i1" required> Yes,  I'll be there</label>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/viewform" class='btn btn-primary d-lg-none'>Open RSVP Form</a>
+          <!-- <div class='container' style='text-align: left;margin-top: 5px;width: auto;margin-left: auto; margin-right: auto;'> -->
+          <form class='d-block d-lg-block' action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/formResponse" method="POST">
+            <div class='container' style='text-align: left; padding: 5px;'>
+              <div>
+                <legend for="rsvp-nama">What's your name? <span class='required'>*</span></legend>
+                <input class="form-control" type="text" id="rsvp-nama" name="entry.1498135098" value="" required>
               </div>
-              <div class="form-check">
+              <fieldset>
+                <legend>Are you able to attend? <span class='required'>*</span></legend>
+                <div class="form-check">
+                  <input type="radio" id="rsvp-1-1" class='form-check-input' name="entry.877086558" value="Yes,  I'll be there" required>
+                  <label for="rsvp-1-1" class='form-check-label' >Yes,  I'll be there</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="rsvp-1-2" class='form-check-input' name="entry.877086558" value="Sorry, I can't make it">
+                  <label for="rsvp-1-2" class='form-check-label'>Sorry, I can't make it</label>
+                </div>
+              </fieldset>
 
-                <label class='form-check-label' for="rsvp-radio1-i2"><input type="radio" class='form-check-input' name="entry.877086558" value="Sorry, I can't make it" id="rsvp-radio1-i2"> Sorry, I can't make it</label>
+              <fieldset class='will-attend'>
+                <legend>With whom would you attend?</legend>
+                <div class="form-check">
+                  <input id='rsvp-2-1' type="radio" class="form-check-input" name="entry.902552034" value="I'll come with my couple/my significant other" >
+                  <label for='rsvp-2-1' class='form-check-label' >I'll come with my couple/my significant other</label>
+                </div>
+                <div class="form-check">
+                  <input id='rsvp-2-2' type="radio" class="form-check-input" name="entry.902552034" value="I prefer to come with friends in group" >
+                  <label for='rsvp-2-2' class='form-check-label' >I prefer to come with friends in group</label>
+                </div>
+              </fieldset>
+              <fieldset class='will-attend'>
+                <legend>Which one will you attend to?</legend>
+                <div class="form-check">
+                  <input id='rsvp-3-1' class="form-check-input" type="checkbox" name="entry.924660213" value="Sunday, 23 June 2019 @ Jakarta">
+                  <label for='rsvp-3-1' class='form-check-label' >Sunday, 23 June 2019 @ Jakarta</label>
+                </div>
+                <div class="form-check">
+                  <input id='rsvp-3-2' class="form-check-input" type="checkbox" name="entry.924660213" value="Sunday, 30 June 2019 @ Malang">
+                  <label for='rsvp-3-2' class='form-check-label'>Sunday, 30 June 2019 @ Malang</label>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <legend>Please put your wishes, comments, or anything for us here !</legend>
+                <textarea name="entry.2606285" rows="4" cols="80" class='form-control'></textarea>
               </div>
-            </div>
-
-            <!-- <div class="col-12">
-              <label><input type="radio" name="apa" value="123">Haii</label>
-              <label><input type="radio" name="apa" value="345">Hoii</label>
-            </div> -->
-
-            <div id='withwho' class="col-sm-12 will-attend" >
-              <legend class="col-form-label">With whom would you attend?</legend>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="entry.902552034" value="I'll come with my couple/my significant other" id='rsvp-radio2-i1'>
-                <label class='form-check-label' for='rsvp-radio2-i1'>I'll come with my couple/my significant other</label>
+              <div class="form-group">
+                <input type="submit" name="button" class="btn btn-primary" value="Send forth my RSVP"></input>
+                <p class='small'>Powered by <a href='https://docs.google.com/forms/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/viewform' target='_blank'>Google Form</a></p>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="entry.902552034" value="I prefer to come with friends in group" id='rsvp-radio2-i2'>
-                <label class='form-check-label' for='rsvp-radio2-i2'>I prefer to come with friends in group</label>
-              </div>
-            </div>
-
-            <div class="col-sm-12 will-attend">
-              <legend class="col-form-label">Which one will you attend to?</legend>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="entry.924660213" value="Sunday, 23 June 2019 @ Jakarta" id='rsvp-radio3-i1'>
-                <label class='form-check-label' for='rsvp-radio3-i1'>Sunday, 23 June 2019 @ Jakarta</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="entry.924660213" value="Sunday, 30 June 2019 @ Malang" id='rsvp-radio3-i2'>
-                <label class='form-check-label' for='rsvp-radio3-i2'>Sunday, 30 June 2019 @ Malang</label>
-              </div>
-            </div>
-
-            <div class="form-group col-sm-12">
-              <legend class='col-form-label'>Please put your wishes, comments, or anything for us here !</legend>
-              <textarea name="entry.2606285" rows="4" cols="80" class='form-control'></textarea>
-            </div>
-
-            <div class="form-group col-12">
-              <input type="submit" name="button" class="btn btn-primary" value="Send forth my RSVP"></input>
-            </div>
-            <div class="col-12">
-              <p class='small'>Powered by <a href='https://docs.google.com/forms/d/e/1FAIpQLSeKjSn8CGiVGH7q8VuUbdirdcoDgxCZbfy3KFp7zdSxoyil8A/viewform' target='_blank'>Google Form</a></p>
             </div>
           </form>
-        </div>
+            <!-- <fieldset> -->
+              <!-- <legend>Yoomamen</legend> -->
+              <!-- <div> -->
+                <!-- <input type="radio" name="a" id="bb" value="b" >
+                <label for="bb" > Neeeeeeee </label> -->
+              <!-- </div> -->
+              <!-- <div> -->
+                <!-- <input type="radio" name="a" id="cc" value="c">
+                <label for="cc"> Yeeeeeeee </label> -->
+              <!-- </div> -->
+            <!-- </fieldset> -->
+            <!-- <fieldset>
+              <legend>Yoomamen</legend>
+              <div>
+                <input type="radio" name="b" id="cbb" value="b" >
+                <label for="cbb" > Neeeeeeee </label>
+              </div>
+              <div>
+                <input type="radio" name="b" id="bcc" value="c">
+                <label for="bcc"> Yeeeeeeee </label>
+              </div>
+            </fieldset> -->
+            <!-- <fieldset>
+              <legend>Yoomamen</legend>
+              <div class="form-check">
+                <input type="radio" name="ba" id="bbb" value="b" class='form-check-input'>
+                <label for="bbb" class='form-check-label'> Neeeeeeee </label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name="ba" id="ccc" value="c" class='form-check-input'>
+                <label for="ccc" class='form-check-label'> Yeeeeeeee </label>
+              </div>
+            </fieldset> -->
       </div>
+    </div> <!-- end of .section -->
 
     </div><!-- end of #fullpage -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="scripts/js/main.js" charset="utf-8"></script>
 
     <script type="text/javascript">

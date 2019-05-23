@@ -122,7 +122,7 @@ let timerId = countdown(function (ts) {
 // Listener for form radio change
 function handleAttendanceChange(e) {
     var list = document.querySelectorAll('.will-attend input')
-    if(document.getElementById('rsvp-radio1-i1').checked) {
+    if(document.getElementById('rsvp-1-1').checked) {
       for(var i = 0, el = list[i]; i < list.length ;++i, el=list[i])
       {
         if(el.hasAttribute('disabled'))
@@ -136,8 +136,8 @@ function handleAttendanceChange(e) {
     }
 }
 
-document.getElementById('rsvp-radio1-i1').addEventListener('change', handleAttendanceChange)
-document.getElementById('rsvp-radio1-i2').addEventListener('change', handleAttendanceChange)
+document.getElementById('rsvp-1-1').addEventListener('change', handleAttendanceChange)
+document.getElementById('rsvp-1-2').addEventListener('change', handleAttendanceChange)
 
 // document.forms[0].elements
 // document.getElementById('img-za').classList.add('img-seen');
