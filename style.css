@@ -218,8 +218,9 @@ iframe {
   margin: 10px auto 15px auto;
   color: white;
   font-family: Digital7, monospace;
-  /* background: url("assets/wooden.jpg") no-repeat; */
   padding: 5px 20px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #timer .col-timer {
@@ -244,12 +245,6 @@ iframe {
   vertical-align: top; /* overwrite fp's default setting */
 }
 
-/* [data-anchor="rsvp"] .fp-tableCell .col-12 {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  margin: auto;
-} */
 /*
 [data-anchor="rsvp"] .fp-tableCell .fp-scroller {
 background: url("assets/wood-005.png") repeat-x top left;
