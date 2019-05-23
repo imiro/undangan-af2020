@@ -1,5 +1,5 @@
 
-const anchors = ["home", "hikmah1", "undangan", "about", "storyline", "hikmah2", "aza", "info", "rsvp"]
+const anchors = ["home", "hikmah1", "undangan", "about", "storyline", "hikmah2", /*"aza",*/ "info", "rsvp"]
 
 const animationRegister = (function() {
 
