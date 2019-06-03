@@ -67,7 +67,6 @@ function handleAfterLoad(origin, destination, direction)
   if(destination.index == 0) {
     let img = document.getElementById('img-za')
     img.classList.add('img-seen')
-    // img.classList.add('img-seen');
   }
 
   if(destination.anchor == 'hikmah1') {
@@ -83,6 +82,10 @@ function handleAfterLoad(origin, destination, direction)
       delay += 300
       animateCSSon(node, animations[i])
     })
+  }
+
+  if(destination.anchor == 'storyline') {
+    fullpage_api.reBuild()
   }
 }
 
@@ -139,6 +142,28 @@ function handleAttendanceChange(e) {
 document.getElementById('rsvp-1-1').addEventListener('change', handleAttendanceChange)
 document.getElementById('rsvp-1-2').addEventListener('change', handleAttendanceChange)
 
+fetch("https://script.googleusercontent.com/macros/echo?user_content_key=MwLli6zPyZEGyqRgC2mJ38lwuDPDdIleyfFy8d0fVMJwIuLynFQurP_0vxYurBznKRS-5DNdlo9IZAalX7Hqc2Q7_cJegkvtm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGX_TbfUPh7CIEGIkXjx2EGYGh85oFwCNt0-m3bLPlfXzYFTN7hdY6shPuo-3l_PPsTvy1m0tLyP&lib=MB8u0sxb66PMk1tHZwDvMJYrxwHvlKT-q")
+.then(resp => resp.json())
+.then(data => {
+  var div = document.getElementById('guestbook')
+  var messagesDiv = div.getElementsByClassName('container')[0]
+
+  var text = ""
+  for(var i in data) {
+    if(i == 1) continue;
+    text += "<h5>" + data[i].nama
+    if(data[i].akanHadir) {
+      text += " <span class='badge badge-success'>✓ Attending</span>"
+    }
+    text += "</h5>\n"
+    text += "<p>" + data[i].words + "</p><hr/>\n"
+  }
+
+  console.log(messagesDiv)
+  messagesDiv.innerHTML = text
+  fullpage_api.reBuild()
+  // div.style.display = 'block'
+})
 // document.forms[0].elements
 // document.getElementById('img-za').classList.add('img-seen');
 // setTimeout(() => {document.getElementById('img-za').classList.add('img-seen');}, 1000)
