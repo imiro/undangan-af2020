@@ -1,7 +1,7 @@
 
 const anchors =
   ["home", "hikmah1", "undangan", "tentang",
-  "kisah1", "kisah2", "kisah3", "info", "doa", "goresan", "rsvp"]
+  "kisah1", "kisah2", "kisah3", "info", "doa", "goresan", "hadits", "rsvp"]
 
 const animationRegister = (function() {
 
@@ -19,6 +19,14 @@ const animationRegister = (function() {
         let { node, animationName } = nodeList.pop()
         node.classList.remove('animated', animationName)
       }
+    },
+    fadeAll: function() {
+      for(i in nodeList) {
+        let { node, animationName } = nodeList[i]
+        node.classList.remove(animationName)
+        node.classList.add('fadeOut')
+        nodeList[i].animationName = 'fadeOut'
+      }
     }
   }
 }) ()
@@ -26,15 +34,16 @@ const animationRegister = (function() {
 function handleOnLeave(origin, destination, direction)
 {
   // --- background change ---
-  // topleft+bottomright: 0, 1, 2, 7, 8, 9
+  // topleft+bottomright: 0, 1, 2, 7, 8, 9, 10
   // bottom: 3, 4, 5, 6, 11
 
   let divBg = document.getElementById('bg-placeholder')
   let divBg2 = document.getElementById('bg-placeholder2')
 
   console.log(origin.index + ' ' + destination.index + ' ' + direction)
+  animationRegister.fadeAll()
 
-  let bg = [0, 1, 2, 7, 8, 9];
+  let bg = [0, 1, 2, 7, 8, 9, 10];
 
   if(bg.indexOf(origin.index) != -1 && bg.indexOf(destination.index) == -1)
   {
@@ -66,6 +75,69 @@ function handleOnLeave(origin, destination, direction)
   // clear previous animation registered with animateCSS
   // (so that it can reload when the section is re-visited)
   animationRegister.clear()
+
+  if(destination.anchor == 'tentang') {
+    let el1 = destination.item.querySelector('.load-1')
+    let el2 = destination.item.querySelector('.load-2')
+    el1.style.animationDelay= '500ms'
+    el2.style.animationDelay= '1200ms'
+    animateCSSon(el1, 'fadeIn')
+    animateCSSon(el2, 'fadeIn')
+  }
+
+  if(destination.anchor.indexOf('kisah') != -1) {
+    let delay = 500
+    for(let i = 1, node = destination.item.querySelector('.load-'+i);
+        node;++i, node = destination.item.querySelector('.load-'+i)) {
+        node.style.animationDelay = delay+'ms'
+        delay += 500
+        animateCSSon(node, 'fadeIn')
+    }
+  }
+
+  if(destination.anchor == 'undangan')
+  {
+    let delay = 0
+    let animations = ['fadeIn', 'zoomIn', 'zoomIn', 'zoomIn',
+                      'fadeIn', 'fadeIn', 'fadeIn']
+
+    for(let i = 1, node = document.getElementById('undangan-'+i);
+            i <= 7;++i, node = document.getElementById('undangan-'+i))
+    {
+      node.style.animationDelay = delay+'ms'
+      delay += 600
+      animateCSSon(node, animations[i-1])
+    }
+  }
+
+  if(destination.anchor == 'info')
+  {
+
+    let animations = ['zoomIn', 'fadeIn', 'fadeIn', 'fadeIn']
+    let delays = [200, 1000, 500, 500]
+    let delay = 0
+
+    for(let i = 1, node = destination.item.querySelector('.load-'+i);
+        node;++i, node = destination.item.querySelector('.load-'+i)) {
+
+        delay += delays[i-1]
+        if(i==1) node.style.animationDuration='1200ms'
+        node.style.animationDelay = delay+'ms'
+        animateCSSon(node, animations[i-1])
+    }
+  }
+
+  if(destination.anchor == 'doa' || destination.anchor == 'hadits')
+  {
+    let header = destination.item.querySelector('h2')
+    header.style.animationDuration = '600ms'
+    header.style.animationDelay = '300ms'
+    animateCSSon(header, 'fadeIn')
+    destination.item.querySelectorAll('p').forEach( (p) => {
+      p.style.animationDelay = '1000ms'
+      animateCSSon(p, 'fadeIn')
+    })
+  }
 }
 
 function handleAfterLoad(origin, destination, direction)
@@ -80,26 +152,10 @@ function handleAfterLoad(origin, destination, direction)
     animateCSS('#arrum', 'fadeIn')
   }
 
-  if(destination.anchor == 'undangan')
-  {
-    let delay = 0
-    let animations = ['fadeIn', 'zoomIn', 'zoomIn', 'zoomIn',
-                      'fadeIn', 'fadeIn', 'fadeIn']
 
-    for(let i = 1, node = document.getElementById('undangan-'+i);
-            i <= 7;++i, node = document.getElementById('undangan-'+i))
-    {
-      console.log(i)
-      console.log(node)
-      node.style.animationDelay = delay+'ms'
-      delay += 600
-      animateCSSon(node, animations[i-1])
-    }
-  }
-
-  if(destination.anchor == 'storyline') {
-    fullpage_api.reBuild()
-  }
+  // if(destination.anchor == 'storyline') {
+  //   fullpage_api.reBuild()
+  // }
 }
 
 function animateCSS(selector, animationName, callback) {

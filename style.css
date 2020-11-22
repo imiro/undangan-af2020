@@ -144,8 +144,14 @@ body {
       transform: translate(-50%, -50%);
     }
 
-    .bg-one {
-      background-size: 150px, 150px;
+    #bg-placeholder2 {
+      background:
+        url("assets/bg-md/top-left.png") no-repeat top left,
+        url("assets/bg-md/top-right.png") no-repeat top right,
+        url("assets/bg-md/bottom-left.png") no-repeat bottom left,
+        url("assets/bg-md/bottom-right.png") no-repeat bottom right;
+      background-size:
+        30% auto, 30% auto, 30% auto, 30% auto;
     }
 
     .nama {
@@ -157,22 +163,14 @@ body {
     }
 }
 
-@media(min-width: 980px) {
-
-  .bg-one {
-    background-size: 200px, 200px;
-  }
-
-}
-
 /* ===================== */
 
-.nama {
+/* .nama {
   font-family: RougeScript, cursive;
   font-weight: normal;
   font-size: 48px;
   color: #d4af37;
-}
+} */
 
 [data-anchor='undangan'] {
   font-size: 1em;
@@ -191,24 +189,22 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-/* Section: Story */
 
-#together {
-  text-align: center;
-  margin: auto;
-  font-size: 2em;
+/* Section: Tentang */
+
+[data-anchor='tentang'] img {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-#forlife > .hover {
-  display: none;
+[data-anchor='tentang'] p {
+  font-size: 0.7em;
 }
 
-#forlife:hover .initial, #forlife:active .initial, #forlife:focus .initial  {
-  display: none;
-}
-
-#forlife:hover .hover, #forlife:active .hover {
-  display: block;
+@media(min-width: 768px) {
+  [data-anchor='tentang'] img {
+    width: 250px;
+  }
 }
 
 /* Section: Info */
