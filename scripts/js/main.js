@@ -1,5 +1,7 @@
 
-const anchors = ["home", "hikmah1", "undangan", "about", "storyline", "hikmah2", /*"aza",*/ "info", "rsvp"]
+const anchors =
+  ["home", "hikmah1", "undangan", "tentang",
+  "kisah1", "kisah2", "kisah3", "info", "doa", "goresan", "rsvp"]
 
 const animationRegister = (function() {
 
@@ -24,18 +26,23 @@ const animationRegister = (function() {
 function handleOnLeave(origin, destination, direction)
 {
   // --- background change ---
+  // topleft+bottomright: 0, 1, 2, 7, 8, 9
+  // bottom: 3, 4, 5, 6, 11
+
   let divBg = document.getElementById('bg-placeholder')
   let divBg2 = document.getElementById('bg-placeholder2')
 
   console.log(origin.index + ' ' + destination.index + ' ' + direction)
 
-  if(origin.index < 3 && destination.index >= 3)
+  let bg = [0, 1, 2, 7, 8, 9];
+
+  if(bg.indexOf(origin.index) != -1 && bg.indexOf(destination.index) == -1)
   {
     divBg.classList.add('bg-two')
     divBg2.classList.add('bg2-two')
   }
 
-  if(origin.index >= 3 && destination.index < 3) {
+  if(bg.indexOf(origin.index) == -1 && bg.indexOf(destination.index) != -1) {
     divBg.classList.remove('bg-two')
     divBg2.classList.remove('bg2-two')
   }
@@ -70,18 +77,24 @@ function handleAfterLoad(origin, destination, direction)
   }
 
   if(destination.anchor == 'hikmah1') {
-    animateCSS('#arrum', 'zoomIn')
+    animateCSS('#arrum', 'fadeIn')
   }
 
-  if(destination.anchor == 'undangan') {
+  if(destination.anchor == 'undangan')
+  {
     let delay = 0
-    let animations = ['fadeInDown', 'fadeInUp', 'flipInX', 'flipInX', 'fadeInUp']
-    document.querySelectorAll('[data-anchor=undangan] p')
-    .forEach(function (node, i) {
+    let animations = ['fadeIn', 'zoomIn', 'zoomIn', 'zoomIn',
+                      'fadeIn', 'fadeIn', 'fadeIn']
+
+    for(let i = 1, node = document.getElementById('undangan-'+i);
+            i <= 7;++i, node = document.getElementById('undangan-'+i))
+    {
+      console.log(i)
+      console.log(node)
       node.style.animationDelay = delay+'ms'
-      delay += 300
-      animateCSSon(node, animations[i])
-    })
+      delay += 600
+      animateCSSon(node, animations[i-1])
+    }
   }
 
   if(destination.anchor == 'storyline') {
@@ -139,8 +152,8 @@ function handleAttendanceChange(e) {
     }
 }
 
-document.getElementById('rsvp-1-1').addEventListener('change', handleAttendanceChange)
-document.getElementById('rsvp-1-2').addEventListener('change', handleAttendanceChange)
+// document.getElementById('rsvp-1-1').addEventListener('change', handleAttendanceChange)
+// document.getElementById('rsvp-1-2').addEventListener('change', handleAttendanceChange)
 
 fetch("https://script.googleusercontent.com/macros/echo?user_content_key=MwLli6zPyZEGyqRgC2mJ38lwuDPDdIleyfFy8d0fVMJwIuLynFQurP_0vxYurBznKRS-5DNdlo9IZAalX7Hqc2Q7_cJegkvtm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGX_TbfUPh7CIEGIkXjx2EGYGh85oFwCNt0-m3bLPlfXzYFTN7hdY6shPuo-3l_PPsTvy1m0tLyP&lib=MB8u0sxb66PMk1tHZwDvMJYrxwHvlKT-q")
 .then(resp => resp.json())
