@@ -20,8 +20,9 @@
 }
 
 @font-face {
-  font-family: Artilla;
-  src: local("Artilla"), url("assets/fonts/artilla.ttf");
+  font-family: NotoSerifDisplay;
+  src: local("Noto Serif Display"),
+       url("assets/fonts/NotoSerifDisplay-Light.ttf");
 }
 
 @-ms-viewport {
@@ -29,7 +30,7 @@
 }
 
 body {
-  font-family: "Unicode Optima", Georgia, sans-serif;
+  font-family: NotoSerifDisplay, "Helvetica Neue", Georgia, sans-serif;
   color: #785F38;
   background-color: #F7F1EF;
 }
