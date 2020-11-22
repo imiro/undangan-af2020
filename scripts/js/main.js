@@ -87,12 +87,15 @@ function handleOnLeave(origin, destination, direction)
 
   if(destination.anchor.indexOf('kisah') != -1) {
     let delay = 500
-    for(let i = 1, node = destination.item.querySelector('.load-'+i);
-        node;++i, node = destination.item.querySelector('.load-'+i)) {
-        node.style.animationDelay = delay+'ms'
+    for(let i = 1, nodes = destination.item.querySelectorAll('.load-'+i);
+        nodes.length;
+        ++i, nodes = destination.item.querySelectorAll('.load-'+i)) {
         delay += 500
-        animateCSSon(node, 'fadeIn')
-    }
+        for(node of nodes) {
+          node.style.animationDelay = delay+'ms'
+          animateCSSon(node, 'fadeIn')
+        }
+      }
   }
 
   if(destination.anchor == 'undangan')
