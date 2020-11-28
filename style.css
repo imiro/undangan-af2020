@@ -88,7 +88,7 @@ body {
  */
 .bg-one {
   background: url("assets/bg/top-left.png") no-repeat top left, url("assets/bg/bottom-right.png") no-repeat bottom right;
-  background-size: 25%, 25%;
+  background-size: 17%, 17%;
   left: 0;
   right: 0;
   /* height: 100vh; */
@@ -180,6 +180,10 @@ body {
   color: #d4af37;
 } */
 
+.bold {
+  font-weight: bold;
+}
+
 [data-anchor='undangan'] {
   font-size: 14px;
 }
@@ -196,6 +200,14 @@ body {
 
 [data-anchor="tentang"] img {
   width: 250px;
+}
+
+#logo {
+  margin-bottom: 30px;
+}
+
+#doa-arab {
+  font-size: 1.3em;
 }
 
 
@@ -236,9 +248,38 @@ body {
   [data-anchor="kisah2"] .load-2 {
     text-align: right;
     padding-right: 50px;
-  }[data-anchor="kisah2"] .load-3 {
+  }
+  [data-anchor="kisah2"] .load-3 {
     text-align: left;
     padding-left: 50px;
+  }
+
+  [data-anchor="kisah3"] img {
+    width: 550px;
+  }
+
+  [data-anchor="kisah3"] .row {
+    font-size: 1.2rem;
+  }
+
+  #logo {
+    width: 250px;
+  }
+
+  [data-anchor="doa"] {
+    font-size: 120%;
+  }
+  [data-anchor="hadits"] {
+    font-size: 140%;
+  }
+
+  [data-anchor="doa"] .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  #doa-arab {
+    font-size: 1.7em;
   }
 }
 
