@@ -11,7 +11,7 @@ console.log(w, h)
 
  for (i=0; i<total; i++){
    var Div = document.createElement('div');
-   TweenLite.set(Div,{attr:{class:'dot'},x:R(0,w-110),y:R(-200,-150),z:R(-200,200)});
+   TweenLite.set(Div,{attr:{class:'dot'},x:R(0,w-150),y:R(-200,-150),z:R(-200,200)});
    warp.appendChild(Div);
    animm(Div);
  }
