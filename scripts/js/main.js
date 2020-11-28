@@ -234,7 +234,7 @@ fetch("https://script.googleusercontent.com/macros/echo?user_content_key=MwLli6z
   console.log(messagesDiv)
   messagesDiv.innerHTML = text
   fullpage_api.reBuild()
-  // div.style.display = 'block'
+  div.style.display = 'block'
 })
 // document.forms[0].elements
 // document.getElementById('img-za').classList.add('img-seen');

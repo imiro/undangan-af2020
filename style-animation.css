@@ -13,3 +13,19 @@
 [data-anchor="undangan"] p.animated {
   opacity: 1;
 }
+
+/* body{
+  background-color: #111;
+  font-family: Signika Negative, Asap, sans-serif;
+  color:white;
+  overflow:hidden;
+} */
+
+.dot{
+  width:35px;
+  height:35px;
+  position:absolute;
+  background: url("https://image.ibb.co/kyUHab/rose.png") no-repeat;
+  background-size: 25% 25%;
+  opacity: 0.5;
+}

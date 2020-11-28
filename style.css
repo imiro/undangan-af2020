@@ -347,6 +347,9 @@ body {
   [data-anchor='tentang'] img {
     width: 250px;
   }
+  [data-anchor='tentang'] p {
+    font-size: 1em;
+  }
 }
 
 /* Section: Info */
@@ -396,11 +399,11 @@ iframe {
   margin-bottom: -15px;
 }
 
-[data-anchor="rsvp"] .container-fluid {
+/* [data-anchor="rsvp"] .container-fluid {
   padding: 10px;
   background: url("assets/wood-005.png") repeat-x top left;
   background-size: auto 50vh;
-}
+} */
 
 [data-anchor="rsvp"] .fp-tableCell {
   vertical-align: top; /* overwrite fp's default setting */
