@@ -100,12 +100,12 @@ function handleOnLeave(origin, destination, direction)
 
   if(destination.anchor == 'undangan')
   {
-    let delay = 0
+    let delay = 200
     let animations = ['fadeIn', 'zoomIn', 'zoomIn', 'zoomIn',
-                      'fadeIn', 'fadeIn', 'fadeIn']
+                      'fadeIn', 'fadeIn', 'fadeIn', 'fadeIn']
 
     for(let i = 1, node = document.getElementById('undangan-'+i);
-            i <= 7;++i, node = document.getElementById('undangan-'+i))
+            i <= 8;++i, node = document.getElementById('undangan-'+i))
     {
       node.style.animationDelay = delay+'ms'
       delay += 600

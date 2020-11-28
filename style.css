@@ -188,10 +188,29 @@ body {
   margin-top: -5px;
 }
 
+#undangan-1 {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
 
 [data-anchor="tentang"] img {
   width: 250px;
 }
+
+
+/** Kisah 1 **/
+.center-vertically {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-anchor="kisah2"] .load-4 {
+  padding-top: 10px;
+}
+
+/** === end of Kisah 1 === **/
 
 @media(min-width: 768px) {
   [data-anchor="tentang"] img {
@@ -205,6 +224,22 @@ body {
   .container-fluid img {
     width: 300px;
   }
+
+  [data-anchor="kisah2"] img {
+    width: 300px;
+  }
+
+  [data-anchor="kisah2"] .load-4 {
+    padding-top: 30px;
+  }
+
+  [data-anchor="kisah2"] .load-2 {
+    text-align: right;
+    padding-right: 50px;
+  }[data-anchor="kisah2"] .load-3 {
+    text-align: left;
+    padding-left: 50px;
+  }
 }
 
 @media(max-width: 767.97px) {
@@ -217,7 +252,7 @@ body {
     margin-bottom: 55px;
   }
 
-  /** Kisah 2 **/
+  /** Kisah 1 **/
   .container-fluid {
     padding-top: 15%;
     font-size: 0.9rem;
@@ -239,16 +274,17 @@ body {
   .container-fluid .load-5 {
     transform: translateX(20px)
   }
+
+  /** Kisah 2 **/
+  [data-anchor="kisah2"] .load-2 {
+    transform: translateX(-50px);
+  }
+  [data-anchor="kisah2"] .load-3 {
+    transform: translateX(50px);
+  }
 }
 
-/** Kisah 2 **/
-.center-vertically {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-/** === end of Kisah 2 === **/
 
 .add-v-padding, .kisah .row {
   padding-top: 10px;
