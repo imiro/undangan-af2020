@@ -40,13 +40,20 @@ body {
 }
 
 .container {
-  padding: 10% 25px 0 25px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .fp-tooltip {
   background: rgba(0,0,0,0.5);
   border-radius: 3px;
   padding: 5px;
+}
+
+@media(max-width: 767.97px) {
+  #fp-nav.fp-right {
+    right: 3px;
+  }
 }
 
 /* Background Animations */
@@ -81,7 +88,7 @@ body {
  */
 .bg-one {
   background: url("assets/bg/top-left.png") no-repeat top left, url("assets/bg/bottom-right.png") no-repeat bottom right;
-  background-size: 300px, 300px;
+  background-size: 25%, 25%;
   left: 0;
   right: 0;
   /* height: 100vh; */
@@ -152,7 +159,7 @@ body {
         url("assets/bg-md/bottom-left.png") no-repeat bottom left,
         url("assets/bg-md/bottom-right.png") no-repeat bottom right;
       background-size:
-        30% auto, 30% auto, 30% auto, 30% auto;
+        20% auto, 20% auto, 20% auto, 20% auto;
     }
 
     .nama {
@@ -174,17 +181,74 @@ body {
 } */
 
 [data-anchor='undangan'] {
-  font-size: 1em;
+  font-size: 14px;
 }
 
 [data-anchor="undangan"] p.small {
   margin-top: -5px;
 }
 
+
+[data-anchor="tentang"] img {
+  width: 250px;
+}
+
+@media(min-width: 768px) {
+  [data-anchor="tentang"] img {
+    width: 350px;
+  }
+
+  .container-fluid .col {
+    padding: 5px;
+  }
+
+  .container-fluid img {
+    width: 300px;
+  }
+}
+
+@media(max-width: 767.97px) {
+
+  [data-anchor="undangan"] .container, [data-anchor="tentang"] .container {
+    padding: 10% 10% 0 10%;
+  }
+
+  [data-anchor="tentang"] .col-md-6.load-1 {
+    margin-bottom: 55px;
+  }
+
+  /** Kisah 2 **/
+  .container-fluid {
+    padding-top: 15%;
+    font-size: 0.9rem;
+  }
+
+  .container-fluid .load-1 {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .container-fluid .load-4 {
+    padding: 0;
+  }
+
+  .container-fluid .load-3 {
+    transform: translateX(-20px)
+  }
+
+  .container-fluid .load-5 {
+    transform: translateX(20px)
+  }
+}
+
+/** Kisah 2 **/
 .center-vertically {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
+
+/** === end of Kisah 2 === **/
 
 .add-v-padding, .kisah .row {
   padding-top: 10px;
