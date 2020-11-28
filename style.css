@@ -33,6 +33,7 @@ body {
   font-family: NotoSerifDisplay, "Helvetica Neue", Georgia, sans-serif;
   color: #785F38;
   background-color: #F7F1EF;
+  overflow-x: hidden;
 }
 
 .section {

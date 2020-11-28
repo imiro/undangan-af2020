@@ -155,6 +155,10 @@ function handleAfterLoad(origin, destination, direction)
     animateCSS('#arrum', 'fadeIn')
   }
 
+  // if(destination.anchor == 'rsvp' || origin.anchor == 'rsvp') {
+  //   fullpage_api.reBuild()
+  // }
+
 
   // if(destination.anchor == 'storyline') {
   //   fullpage_api.reBuild()
@@ -172,27 +176,27 @@ function animateCSSon(node, animationName, callback) {
 }
 
 // countdown section
-const weddingTime = 1561251600;
-let now = (new Date()).getTime()
-
-let timerId = countdown(function (ts) {
-  // console.log(ts)
-  const units = ['weeks', 'days', 'hours', 'minutes', 'seconds']
-  const labels = ['minggu', 'hari', 'jam', 'menit', 'detik']
-
-  function duaDigit(chr) {
-      if(chr.toString().length < 2)
-        return "0" + chr.toString();
-      else
-        return chr.toString()
-  }
-
-  for(let i = 0;i < units.length;++i)
-  {
-      document.getElementById(units[i]).innerHTML = duaDigit(ts[units[i]])
-  }
-
-}, weddingTime*1000, countdown.WEEKS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
+// const weddingTime = 1561251600;
+// let now = (new Date()).getTime()
+//
+// let timerId = countdown(function (ts) {
+//   // console.log(ts)
+//   const units = ['weeks', 'days', 'hours', 'minutes', 'seconds']
+//   const labels = ['minggu', 'hari', 'jam', 'menit', 'detik']
+//
+//   function duaDigit(chr) {
+//       if(chr.toString().length < 2)
+//         return "0" + chr.toString();
+//       else
+//         return chr.toString()
+//   }
+//
+//   for(let i = 0;i < units.length;++i)
+//   {
+//       document.getElementById(units[i]).innerHTML = duaDigit(ts[units[i]])
+//   }
+//
+// }, weddingTime*1000, countdown.WEEKS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS)
 
 // Listener for form radio change
 function handleAttendanceChange(e) {

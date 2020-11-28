@@ -22,10 +22,10 @@
 } */
 
 .dot{
-  width:35px;
-  height:35px;
+  width:10px;
+  height:10px;
   position:absolute;
   background: url("https://image.ibb.co/kyUHab/rose.png") no-repeat;
-  background-size: 25% 25%;
+  background-size: 100% 100%;
   opacity: 0.5;
 }
