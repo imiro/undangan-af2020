@@ -2,11 +2,11 @@
 a Pen by DIACO : twitter.com/Diaco_ml  ||  codepen.io/MAW
 powered by GSAP : https://www.greensock.com/
 */
-TweenLite.set("#bg-placeholder",{perspective:600})
+TweenLite.set("#bg-placeholder-daun",{perspective:600})
 // TweenLite.set("img",{xPercent:"-50%",yPercent:"-50%"})
 
 var total = 20;
-var warp = document.getElementById("bg-placeholder"),	w = window.innerWidth , h = window.innerHeight;
+var warp = document.getElementById("bg-placeholder-daun"),	w = window.innerWidth , h = window.innerHeight;
 console.log(w, h)
 
  for (i=0; i<total; i++){
