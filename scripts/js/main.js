@@ -226,7 +226,7 @@ fetch("https://script.google.com/macros/s/AKfycbz3sLK-v5T3-Cs_e4lmMY8Kz7VA3nYF1z
 
   var text = ""
   for(var i in data) {
-    if(i == 1) continue;
+    // if(i == 1) continue;
     text += "<h5>" + data[i].nama
     if(data[i].akanHadir) {
       text += " <span class='badge badge-success'>✓ Hadir</span>"
