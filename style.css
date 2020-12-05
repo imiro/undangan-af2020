@@ -40,6 +40,15 @@ body {
   text-align: center;
 }
 
+.btn-custom, .btn-custom:link, .btn-custom:visited {
+  color: #fff;
+  background-color: #b8c9be;
+}
+
+a:link, a:visited {
+  color: #785F38;
+}
+
 .container {
   padding-left: 30px;
   padding-right: 30px;
